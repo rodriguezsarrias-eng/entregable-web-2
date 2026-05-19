@@ -1,0 +1,122 @@
+div {
+    background: linear-gradient(135deg, #0a0e27 0%, #16213e 50%, #0a0e27 100%);
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    max-width: 100%;
+}
+
+.CardCharacter {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid #1cff00;
+    border-radius: 16px;
+    padding: 30px;
+    max-width: 100%;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #16213e 0%, #0a0e27 100%);
+    box-shadow: 0 0 40px rgba(28, 255, 0, 0.5), inset 0 0 30px rgba(0, 255, 255, 0.15), 0 0 80px rgba(178, 0, 255, 0.3);
+    backdrop-filter: blur(10px);
+    position: relative;
+    animation: neon-glow 3s ease-in-out infinite;
+}
+
+.CardCharacter::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #00ffff, #1cff00, #b200ff, #ff6600, #00ffff);
+    border-radius: 16px;
+    opacity: 0;
+    z-index: -1;
+    animation: gradientShift 4s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% {
+        opacity: 0.3;
+        filter: blur(5px);
+    }
+    50% {
+        opacity: 0.6;
+        filter: blur(10px);
+    }
+    100% {
+        opacity: 0.3;
+        filter: blur(5px);
+    }
+}
+
+.CardCharacter h1 {
+    color: #00ffff;
+    font-size: 2rem;
+    font-family: 'Get Schwifty', sans-serif;
+    letter-spacing: 2px;
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.6), 0 0 30px rgba(28, 255, 0, 0.4);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.CardCharacter img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 12px;
+    border: 2px solid #b200ff;
+    margin-bottom: 20px;
+    box-shadow: 0 0 30px rgba(178, 0, 255, 0.5), inset 0 0 20px rgba(0, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    filter: brightness(0.9) contrast(1.1);
+}
+
+.CardCharacter img:hover {
+    filter: brightness(1.1) contrast(1.2);
+    transform: scale(1.02);
+    box-shadow: 0 0 50px rgba(178, 0, 255, 0.8), inset 0 0 30px rgba(0, 255, 255, 0.2);
+}
+
+.CardCharacter p {
+    color: #1cff00;
+    font-size: 1.1rem;
+    margin: 12px 0;
+    padding: 10px 15px;
+    background: rgba(28, 255, 0, 0.1);
+    border-left: 3px solid #00ffff;
+    border-radius: 4px;
+    text-shadow: 0 0 8px rgba(28, 255, 0, 0.5);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.CardCharacter button {
+    background: linear-gradient(135deg, #b200ff 0%, #00ffff 100%);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    box-shadow: 0 0 20px rgba(178, 0, 255, 0.5), 0 0 40px rgba(0, 255, 255, 0.3);
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+.CardCharacter button:hover {
+    transform: scale(1.08) translateY(-3px);
+    box-shadow: 0 0 40px rgba(178, 0, 255, 0.8), 0 0 80px rgba(0, 255, 255, 0.6), 0 0 120px rgba(28, 255, 0, 0.4);
+}
+
+.CardCharacter button:active {
+    transform: scale(0.98);
+}
