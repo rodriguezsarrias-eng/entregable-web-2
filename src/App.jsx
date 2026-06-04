@@ -22,7 +22,7 @@ function App() {
 
   return (
     <div className="app-root" style={rootStyle}>
-      <Router basename="/entregable-web-2/">
+      <Router>
         <Header />
         <Nav />
         <main className='app-content' style={contentStyle}>
